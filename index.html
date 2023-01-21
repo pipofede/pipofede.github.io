@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae Federico Salas</title>
+</head>
+
+<body>
+    <H1>Federico Salas</H1>
+    <H2>Desarollador web</H2>
+    <p id="demo"></p>
+
+<script>
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("demo").innerHTML = myObj.created_at;
+  
+}
+xmlhttp.open("GET", 'https://api.chucknorris.io/jokes/random?category=dev');
+xmlhttp.send();
+
+</script>  
+
+   <!-- 
+    <p id="demo"></p>
+    <Script>
+     const txt = 'Datos.json';   
+     const obj = JSON.parse(txt)
+     document.getElementById("demo").innerHTML = obj.txt.name;
+    </Script>
+    -->
+
+    
+
+
+</body>
+
+</html>
